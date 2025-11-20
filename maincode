@@ -3380,8 +3380,8 @@ static void updateRotaryMenuHighlight() {
     bool selected = (i == rotary_menu_index);
     lv_obj_set_style_bg_color(circle, selected ? COLOR_GREEN : COLOR_WHITE, 0);
 
-    // Animate zoom: Selected grows (307 = 1.2x), unselected returns to normal (256 = 1.0x)
-    int32_t target_zoom = selected ? 307 : 256;
+    // Animate zoom: Selected grows (256 = 1.0x), unselected shrinks (180 = ~0.7x)
+    int32_t target_zoom = selected ? 256 : 180;
     int32_t current_zoom = lv_obj_get_style_transform_zoom(circle, 0);
 
     // Only animate if value is different
